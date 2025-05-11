@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Firmansyah | Portfolio</title>
+    <!-- icon title -->
+    <link rel="icon" href="" type="image/png" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation Library -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-black text-white font-sahitya">
+    <!-- Background Canvas -->
+    <canvas
+      id="backgroundCanvas"
+      class="fixed top-0 left-0 w-full h-full -z-10"
+    ></canvas>
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full dark-glass z-50 py-4">
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <div
+          class="text-yellow-500 text-2xl font-bold"
+          style="cursor: pointer"
+          onclick="window.location.reload();"
+        >
+          <span class="font-russo">Firmansyah</span
+          ><span class="text-white">();</span>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a class="nav-link active font-semibold py-2" href="#home"> HOME </a>
+          <a class="nav-link text-gray-400 hover:text-white py-2" href="#about">
+            ABOUT
+          </a>
+          <a
+            class="nav-link text-gray-400 hover:text-white py-2"
+            href="#skills"
+          >
+            SKILLS
+          </a>
+          <a
+            class="nav-link text-gray-400 hover:text-white py-2"
+            href="#portfolio"
+          >
+            PORTFOLIO
+          </a>
+          <a
+            class="nav-link text-gray-400 hover:text-white py-2"
+            href="#contact"
+          >
+            CONTACT
+          </a>
+        </nav>
+        <div class="hidden md:flex space-x-5">
+          <a href="#" class="hover:text-yellow-500 transition-colors">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="#" class="hover:text-yellow-500 transition-colors">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="#" class="hover:text-yellow-500 transition-colors">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+        </div>
+        <!-- Mobile menu button -->
+        <button
+          id="mobileMenuButton"
+          class="md:hidden text-white focus:outline-none"
+        >
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden md:hidden dark-glass">
+        <div class="flex flex-col items-center py-4 space-y-4">
+          <a class="nav-link active font-semibold py-2" href="#home"> HOME </a>
+          <a class="nav-link text-gray-400 hover:text-white py-2" href="#about">
+            ABOUT
+          </a>
+          <a
+            class="nav-link text-gray-400 hover:text-white py-2"
+            href="#skills"
+          >
+            SKILLS
+          </a>
+          <a
+            class="nav-link text-gray-400 hover:text-white py-2"
+            href="#portfolio"
+          >
+            PORTFOLIO
+          </a>
+          <a
+            class="nav-link text-gray-400 hover:text-white py-2"
+            href="#contact"
+          >
+            CONTACT
+          </a>
+          <div class="flex space-x-5 pt-2">
+            <a href="#" class="hover:text-yellow-500 transition-colors">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="#" class="hover:text-yellow-500 transition-colors">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="#" class="hover:text-yellow-500 transition-colors">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center pt-24 px-6 md:px-12"
+    >
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-x-16"
+      >
+        <div data-aos="fade-right" data-aos-duration="1000" class="md:w-1/2">
+          <p class="text-yellow-500 text-lg">Hello world, I'm</p>
+          <h1 class="text-5xl md:text-6xl font-bold font-russo mt-2">
+            Firmansyah Putra
+          </h1>
+          <p class="text-xl md:text-2xl text-yellow-400 font-semibold mt-4">
+            <span id="typing-text"></span><span class="cursor">|</span>
+          </p>
+          <p class="mt-6 text-lg text-gray-300">
+            Crafting seamless digital experiences with a passion for clean code
+            and elegant design.
+          </p>
+          <div class="mt-8 flex space-x-4">
+            <a
+              href="#contact"
+              class="btn-yellow px-6 py-3 rounded-full font-semibold"
+            >
+              Let's Talk
+            </a>
+            <a
+              href="#portfolio"
+              class="border border-gray-500 hover:border-yellow-500 px-6 py-3 rounded-full font-semibold transition-colors"
+            >
+              My Work
+            </a>
+          </div>
+        </div>
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          class="relative mt-10 md:mt-0 md:w-1/2 flex justify-center"
+        >
+          <img
+            src="gambar/f6.jpg"
+            alt="Profile"
+            class="glow w-64 h-64 md:w-80 md:h-80 object-cover rounded-full floating"
+          />
+          <!-- Animated tech icons -->
+          <div
+            class="absolute -top-4 -left-4 bg-yellow-500 rounded-full p-3 shadow-lg animate-pulse"
+          >
+            <i class="fab fa-laravel text-white text-xl"></i>
+          </div>
+          <div
+            class="absolute top-1/2 -right-4 bg-blue-500 rounded-full p-3 shadow-lg animate-pulse"
+            style="animation-delay: 1s"
+          >
+            <i class="fab fa-css3-alt text-white text-xl"></i>
+          </div>
+          <div
+            class="absolute -bottom-4 left-1/3 bg-purple-500 rounded-full p-3 shadow-lg animate-pulse"
+            style="animation-delay: 2s"
+          >
+            <i class="fab fa-php text-white text-xl"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 relative">
+      <div class="custom-shape-divider top">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="fill-gray-900"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2
+            data-aos="fade-up"
+            class="text-4xl font-russo inline-block relative"
+          >
+            ABOUT ME
+            <span
+              class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-yellow-300"
+            ></span>
+          </h2>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="text-gray-400 mt-4 max-w-2xl mx-auto"
+          >
+            A passionate Laravel developer and UI/UX enthusiast with a focus on
+            creating clean, efficient, and user-centered web applications.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div data-aos="fade-right">
+            <div class="dark-glass rounded-2xl p-6 h-full">
+              <h3 class="text-2xl font-semibold mb-4 text-yellow-400">
+                Professional Journey
+              </h3>
+              <div class="space-y-6">
+                <div class="timeline-item">
+                  <h4 class="text-xl font-semibold">
+                    Web Developer at Tech Solutions
+                  </h4>
+                  <p class="text-yellow-500">2022 - Present</p>
+                  <p class="text-gray-300 mt-2">
+                    Leading the development of various web applications using
+                    Laravel and modern frontend technologies.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h4 class="text-xl font-semibold">
+                    UI/UX Designer at Creative Studio
+                  </h4>
+                  <p class="text-yellow-500">2020 - 2022</p>
+                  <p class="text-gray-300 mt-2">
+                    Designed user interfaces and experiences for multiple
+                    clients across different industries.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h4 class="text-xl font-semibold">
+                    Frontend Developer at Startup X
+                  </h4>
+                  <p class="text-yellow-500">2019 - 2020</p>
+                  <p class="text-gray-300 mt-2">
+                    Implemented responsive and interactive user interfaces using
+                    HTML, CSS, and JavaScript.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-left">
+            <div class="dark-glass rounded-2xl p-6 h-full">
+              <h3 class="text-2xl font-semibold mb-4 text-yellow-400">
+                Personal Info
+              </h3>
+              <ul class="space-y-3 text-gray-300">
+                <li class="flex items-start">
+                  <span class="text-yellow-500 mr-3"
+                    ><i class="fas fa-user"></i
+                  ></span>
+                  <div>
+                    <strong class="text-white">Name:</strong> Firmansyah P
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-yellow-500 mr-3"
+                    ><i class="fas fa-code"></i
+                  ></span>
+                  <div>
+                    <strong class="text-white">Profession:</strong> Laravel
+                    Developer & UI/UX Enthusiast
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-yellow-500 mr-3"
+                    ><i class="fas fa-project-diagram"></i
+                  ></span>
+                  <div>
+                    <strong class="text-white">Active Projects:</strong> Teacher
+                    Attendance System & Restaurant POS Application
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-yellow-500 mr-3"
+                    ><i class="fas fa-tools"></i
+                  ></span>
+                  <div>
+                    <strong class="text-white">Expertise:</strong> Laravel,
+                    Tailwind CSS, UI/UX Design, Figma, Database Management
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-yellow-500 mr-3"
+                    ><i class="fas fa-rocket"></i
+                  ></span>
+                  <div>
+                    <strong class="text-white">Interests:</strong> Web
+                    application development, data management systems, and
+                    interactive interface design
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-yellow-500 mr-3"
+                    ><i class="fas fa-laptop-code"></i
+                  ></span>
+                  <div>
+                    <strong class="text-white">Coding Style:</strong> Clean
+                    Code, Efficiency, and User-Centered Design
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-yellow-500 mr-3"
+                    ><i class="fas fa-palette"></i
+                  ></span>
+                  <div>
+                    <strong class="text-white">Hobbies:</strong> Experimenting
+                    with designs in Figma, exploring web technologies, and
+                    enjoying coffee while coding
+                  </div>
+                </li>
+              </ul>
+              <!-- <div class="mt-8">
+                <a
+                  href="#"
+                  class="btn-yellow inline-block px-6 py-3 rounded-full font-semibold"
+                >
+                  Download CV <i class="fas fa-download ml-2"></i>
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-shape-divider bottom">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="fill-gray-900"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-gray-900">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2
+            data-aos="fade-up"
+            class="text-4xl font-russo inline-block relative"
+          >
+            MY SKILLS
+            <span
+              class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-yellow-300"
+            ></span>
+          </h2>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="text-gray-400 mt-4 max-w-2xl mx-auto"
+          >
+            A comprehensive set of technical skills and tools that I've mastered
+            throughout my professional journey.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center space-x-4 mb-12">
+          <button
+            id="btn-stack"
+            class="skill-btn active bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold transition-all"
+          >
+            Tech Stack
+          </button>
+          <button
+            id="btn-tools"
+            class="skill-btn bg-transparent border border-yellow-500 text-yellow-500 px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition-all"
+          >
+            Tools
+          </button>
+          <button
+            id="btn-soft"
+            class="skill-btn bg-transparent border border-yellow-500 text-yellow-500 px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-black transition-all"
+          >
+            Soft Skills
+          </button>
+        </div>
+
+        <!-- Tech Stack Skills -->
+        <div id="tech-stack" class="skill-content">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="100"
+              class="dark-glass p-6 rounded-xl"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg"
+                  alt="Laravel"
+                  class="w-10 h-10 mr-4"
+                />
+                <h3 class="text-xl font-semibold">Laravel</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">95%</p>
+              <p class="text-gray-300 mt-3">
+                Advanced knowledge of Laravel framework, including custom
+                packages, API development, and optimization.
+              </p>
+            </div>
+
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="200"
+              class="dark-glass p-6 rounded-xl"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+                  alt="Tailwind"
+                  class="w-10 h-10 mr-4"
+                />
+                <h3 class="text-xl font-semibold">Tailwind CSS</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">90%</p>
+              <p class="text-gray-300 mt-3">
+                Extensive experience with Tailwind CSS for creating responsive
+                and custom UI components.
+              </p>
+            </div>
+
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="300"
+              class="dark-glass p-6 rounded-xl"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+                  alt="HTML"
+                  class="w-10 h-10 mr-4"
+                />
+                <h3 class="text-xl font-semibold">HTML5</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 98%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">98%</p>
+              <p class="text-gray-300 mt-3">
+                Proficient in semantic HTML5 markup for accessible and
+                SEO-friendly web applications.
+              </p>
+            </div>
+
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="400"
+              class="dark-glass p-6 rounded-xl"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/3d/CSS.3.svg"
+                  alt="CSS"
+                  class="w-10 h-10 mr-4"
+                />
+                <h3 class="text-xl font-semibold">CSS3</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 92%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">92%</p>
+              <p class="text-gray-300 mt-3">
+                Advanced CSS skills including animations, transitions, and
+                responsive design techniques.
+              </p>
+            </div>
+
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="500"
+              class="dark-glass p-6 rounded-xl"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
+                  alt="PHP"
+                  class="w-10 h-10 mr-4"
+                />
+                <h3 class="text-xl font-semibold">PHP</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 94%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">94%</p>
+              <p class="text-gray-300 mt-3">
+                Strong PHP development skills with focus on object-oriented
+                programming and design patterns.
+              </p>
+            </div>
+
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="600"
+              class="dark-glass p-6 rounded-xl"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/b9/JavaScript_shield_logo_%28no_text%29.svg"
+                  alt="JavaScript"
+                  class="w-10 h-10 mr-4"
+                />
+                <h3 class="text-xl font-semibold">JavaScript</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">85%</p>
+              <p class="text-gray-300 mt-3">
+                Proficient in modern JavaScript including ES6+ features, DOM
+                manipulation, and AJAX.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools Skills (Hidden by default) -->
+        <div id="tools" class="skill-content hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fab fa-figma text-3xl text-purple-500 mr-4"></i>
+                <h3 class="text-xl font-semibold">Figma</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 92%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">92%</p>
+              <p class="text-gray-300 mt-3">
+                Expert in Figma for UI/UX design, prototyping, and collaboration
+                with design teams.
+              </p>
+            </div>
+
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-database text-3xl text-blue-500 mr-4"></i>
+                <h3 class="text-xl font-semibold">MySQL</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">90%</p>
+              <p class="text-gray-300 mt-3">
+                Advanced database design, optimization, and query writing skills
+                in MySQL.
+              </p>
+            </div>
+
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fab fa-git-alt text-3xl text-orange-500 mr-4"></i>
+                <h3 class="text-xl font-semibold">Git & GitHub</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">88%</p>
+              <p class="text-gray-300 mt-3">
+                Proficient in version control with Git, GitHub workflows, and
+                collaborative development.
+              </p>
+            </div>
+
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-terminal text-3xl text-green-500 mr-4"></i>
+                <h3 class="text-xl font-semibold">Command Line</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">85%</p>
+              <p class="text-gray-300 mt-3">
+                Comfortable with terminal commands, bash scripting, and
+                automation tools.
+              </p>
+            </div>
+
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-cogs text-3xl text-red-500 mr-4"></i>
+                <h3 class="text-xl font-semibold">RESTful APIs</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 89%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">89%</p>
+              <p class="text-gray-300 mt-3">
+                Experienced in designing, building, and consuming RESTful APIs
+                with proper authentication.
+              </p>
+            </div>
+
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-server text-3xl text-yellow-500 mr-4"></i>
+                <h3 class="text-xl font-semibold">Deployment</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 82%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">82%</p>
+              <p class="text-gray-300 mt-3">
+                Skilled in deploying applications to various hosting
+                environments and server management.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills (Hidden by default) -->
+        <div id="soft" class="skill-content hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-users text-3xl text-blue-400 mr-4"></i>
+                <h3 class="text-xl font-semibold">Team Collaboration</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">95%</p>
+              <p class="text-gray-300 mt-3">
+                Strong ability to work effectively in diverse teams and
+                communicate technical concepts.
+              </p>
+            </div>
+
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-tasks text-3xl text-purple-400 mr-4"></i>
+                <h3 class="text-xl font-semibold">Project Management</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">88%</p>
+              <p class="text-gray-300 mt-3">
+                Experienced in managing development timelines, resources, and
+                client expectations.
+              </p>
+            </div>
+
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-lightbulb text-3xl text-yellow-400 mr-4"></i>
+                <h3 class="text-xl font-semibold">Problem Solving</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 94%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">94%</p>
+              <p class="text-gray-300 mt-3">
+                Excellent analytical and problem-solving skills to tackle
+                complex technical challenges.
+              </p>
+            </div>
+
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-comments text-3xl text-green-400 mr-4"></i>
+                <h3 class="text-xl font-semibold">Communication</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">90%</p>
+              <p class="text-gray-300 mt-3">
+                Clear and effective communication with clients, team members,
+                and stakeholders.
+              </p>
+            </div>
+
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-book-reader text-3xl text-red-400 mr-4"></i>
+                <h3 class="text-xl font-semibold">Continuous Learning</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 96%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">96%</p>
+              <p class="text-gray-300 mt-3">
+                Passion for staying updated with the latest technologies and
+                industry best practices.
+              </p>
+            </div>
+
+            <div class="dark-glass p-6 rounded-xl">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-user-clock text-3xl text-orange-400 mr-4"></i>
+                <h3 class="text-xl font-semibold">Time Management</h3>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 89%"></div>
+              </div>
+              <p class="text-right text-sm mt-1 text-gray-400">89%</p>
+              <p class="text-gray-300 mt-3">
+                Efficient prioritization of tasks and meeting deadlines
+                consistently.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-6">
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2
+            data-aos="fade-up"
+            class="text-4xl font-russo inline-block relative"
+          >
+            MY PORTFOLIO
+            <span
+              class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-yellow-300"
+            ></span>
+          </h2>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="text-gray-400 mt-4 max-w-2xl mx-auto"
+          >
+            Showcasing some of my recent projects and accomplishments in web
+            development and design.
+          </p>
+        </div>
+
+        <div class="flex justify-center mb-10">
+          <div class="flex flex-wrap justify-center gap-3">
+            <button
+              class="portfolio-filter active px-5 py-2 rounded-full bg-yellow-500 text-black font-semibold"
+            >
+              All
+            </button>
+            <button
+              class="portfolio-filter px-5 py-2 rounded-full bg-transparent border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all font-semibold"
+            >
+              Web Apps
+            </button>
+            <button
+              class="portfolio-filter px-5 py-2 rounded-full bg-transparent border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all font-semibold"
+            >
+              UI/UX
+            </button>
+            <button
+              class="portfolio-filter px-5 py-2 rounded-full bg-transparent border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all font-semibold"
+            >
+              Mobile
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Portfolio Item 1 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="project-card group"
+          >
+            <div class="relative overflow-hidden rounded-xl">
+              <img
+                src="gambar/2.png"
+                alt="Teacher Attendance System"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"
+              ></div>
+              <div
+                class="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity flex items-center justify-center"
+              >
+                <div class="text-center p-4">
+                  <h3 class="text-xl font-bold text-yellow-500">
+                    Teacher Attendance System
+                  </h3>
+                  <p class="text-gray-300 mt-2">
+                    A comprehensive Laravel-based system for tracking teacher
+                    attendance with real-time reporting.
+                  </p>
+                  <div class="mt-4">
+                    <a
+                      href="#"
+                      class="inline-block px-4 py-2 bg-yellow-500 text-black rounded-full font-semibold mr-2"
+                      >View Details</a
+                    >
+                    <a
+                      href="#"
+                      class="inline-block px-4 py-2 border border-yellow-500 text-yellow-500 rounded-full font-semibold"
+                      >Live Demo</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-4">
+              <h3 class="text-xl font-semibold">Teacher Attendance System</h3>
+              <p class="text-gray-400 mt-1">Laravel, Tailwind CSS, MySQL</p>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 2 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            class="project-card group"
+          >
+            <div class="relative overflow-hidden rounded-xl">
+              <img
+                src="gambar/1.png"
+                alt="Restaurant POS"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"
+              ></div>
+              <div
+                class="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity flex items-center justify-center"
+              >
+                <div class="text-center p-4">
+                  <h3 class="text-xl font-bold text-yellow-500">
+                    Restaurant POS Application
+                  </h3>
+                  <p class="text-gray-300 mt-2">
+                    A modern point-of-sale system with inventory management and
+                    sales analytics for restaurants.
+                  </p>
+                  <div class="mt-4">
+                    <a
+                      href="#"
+                      class="inline-block px-4 py-2 bg-yellow-500 text-black rounded-full font-semibold mr-2"
+                      >View Details</a
+                    >
+                    <a
+                      href="#"
+                      class="inline-block px-4 py-2 border border-yellow-500 text-yellow-500 rounded-full font-semibold"
+                      >Live Demo</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-4">
+              <h3 class="text-xl font-semibold">Restaurant POS Application</h3>
+              <p class="text-gray-400 mt-1">Laravel, Alpine.js, Tailwind CSS</p>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 3 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            class="project-card group"
+          >
+            <div class="relative overflow-hidden rounded-xl">
+              <img
+                src="gambar/3.png"
+                alt="E-commerce UI Design"
+                class="w-full h-64 object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"
+              ></div>
+              <div
+                class="absolute inset-0 bg-black opacity-0 group-hover:opacity-80 transition-opacity flex items-center justify-center"
+              >
+                <div class="text-center p-4">
+                  <h3 class="text-xl font-bold text-yellow-500">
+                    E-commerce UI Design
+                  </h3>
+                  <p class="text-gray-300 mt-2">
+                    A modern and intuitive user interface design for an
+                    e-commerce platform focused on user experience.
+                  </p>
+                  <div class="mt-4">
+                    <a
+                      href="#"
+                      class="inline-block px-4 py-2 bg-yellow-500 text-black rounded-full font-semibold mr-2"
+                      >View Details</a
+                    >
+                    <a
+                      href="#"
+                      class="inline-block px-4 py-2 border border-yellow-500 text-yellow-500 rounded-full font-semibold"
+                      >Figma File</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-4">
+              <h3 class="text-xl font-semibold">E-commerce UI Design</h3>
+              <p class="text-gray-400 mt-1">Figma, UI/UX Design</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="btn-yellow px-8 py-3 rounded-full font-semibold inline-flex items-center"
+          >
+            View All Projects
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-900 relative">
+      <div class="custom-shape-divider top">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="fill-black"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="container mx-auto">
+        <div class="text-center mb-16">
+          <h2
+            data-aos="fade-up"
+            class="text-4xl font-russo inline-block relative"
+          >
+            GET IN TOUCH
+            <span
+              class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-yellow-300"
+            ></span>
+          </h2>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="text-gray-400 mt-4 max-w-2xl mx-auto"
+          >
+            Let's turn your ideas into reality. Feel free to reach out for
+            collaborations or just a friendly chat.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            data-aos="fade-right"
+            class="dark-glass p-6 rounded-xl text-center"
+          >
+            <div
+              class="inline-block p-4 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mb-4"
+            >
+              <i class="fas fa-map-marker-alt text-2xl text-black"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Location</h3>
+            <p class="text-gray-300 mt-2">Bandung, Indonesia</p>
+          </div>
+
+          <div data-aos="fade-up" class="dark-glass p-6 rounded-xl text-center">
+            <div
+              class="inline-block p-4 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mb-4"
+            >
+              <i class="fas fa-envelope text-2xl text-black"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Email</h3>
+            <p class="text-gray-300 mt-2">firmoyo67@gmail.com</p>
+          </div>
+
+          <div
+            data-aos="fade-left"
+            class="dark-glass p-6 rounded-xl text-center"
+          >
+            <div
+              class="inline-block p-4 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 mb-4"
+            >
+              <i class="fas fa-phone-alt text-2xl text-black"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Phone</h3>
+            <p class="text-gray-300 mt-2">+62 889 7152 2600</p>
+          </div>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div data-aos="fade-right">
+            <form class="dark-glass p-8 rounded-xl">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label for="name" class="block text-gray-400 mb-2"
+                    >Your Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                    placeholder="Jon"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-gray-400 mb-2"
+                    >Your Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                    placeholder="jon@example.com"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <label for="subject" class="block text-gray-400 mb-2"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                  placeholder="Project Simple"
+                />
+              </div>
+
+              <div class="mb-6">
+                <label for="message" class="block text-gray-400 mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                  placeholder="Your message here..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn-yellow w-full py-3 rounded-lg font-semibold flex items-center justify-center"
+              >
+                Send Message
+                <i class="fas fa-paper-plane ml-2"></i>
+              </button>
+            </form>
+          </div>
+
+          <div data-aos="fade-left" class="h-96 md:h-auto">
+            <div class="dark-glass h-full rounded-xl p-4">
+              <!-- Replace with actual map embed -->
+              <div
+                class="bg-gray-800 h-full rounded-lg flex items-center justify-center"
+              >
+                <div class="text-center">
+                  <i
+                    class="fas fa-map-marked-alt text-5xl text-yellow-500 mb-4"
+                  ></i>
+                  <p class="text-gray-300">Map will be embedded here</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-black">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="text-2xl font-bold text-yellow-500 mb-4 font-russo">
+              Firmansyah<span class="text-white">();</span>
+            </div>
+            <p class="text-gray-400 mb-6">
+              Building beautiful, functional, and user-centered web experiences
+              with a focus on quality and performance.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              >
+                <i class="fab fa-github text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              >
+                <i class="fab fa-linkedin-in text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              >
+                <i class="fab fa-twitter text-white"></i>
+              </a>
+              <a
+                href="#"
+                class="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              >
+                <i class="fab fa-instagram text-white"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-white">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >Skills</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#portfolio"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-white">Services</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >Web Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >UI/UX Design</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >Database Design</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >API Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >Consulting</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-white">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Subscribe to receive updates and news about my latest projects.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="flex-1 py-2 px-4 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-yellow-500 transition-colors text-white"
+              />
+              <button
+                type="submit"
+                class="bg-yellow-500 text-black px-4 rounded-r-lg hover:bg-yellow-600 transition-colors"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+          <p class="text-gray-400">© 2025 Firmansyah. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 h-12 w-12 rounded-full bg-yellow-500 text-black flex items-center justify-center opacity-0 invisible transition-all z-50"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script src="javascript/script.js"></script>
+  </body>
+</html>
